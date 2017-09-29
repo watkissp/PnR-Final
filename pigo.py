@@ -91,6 +91,14 @@ class Pigo(object):
         set_right_speed(right)
         print('Left speed set to: '+str(left)+' // Right set to: '+str(right))
 
+    def left(self):
+        """shell command for GoPiGo left"""
+        left()
+
+    def right(self):
+        """shell command for GoPiGo right"""
+        right()
+
     def fwd(self):
         """shell command for GoPiGo fwd"""
         fwd()
