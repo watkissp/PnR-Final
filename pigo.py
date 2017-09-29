@@ -95,33 +95,33 @@ class Pigo(object):
         """shell command for GoPiGo fwd"""
         fwd()
 
-    def encF(self, enc):
+    def encF(self, enc, m1=1, m2=1):
         """sets encoder, moves forward, sleeps (18 = 1 wheel rot)"""
         print('Moving '+str((enc/18))+' rotation(s) forward')
-        enc_tgt(1, 1, enc)
+        enc_tgt(m1, m2, enc)
         fwd()
         time.sleep(1 * (enc / 18)+.4)
 
-    def encR(self, enc):
+    def encR(self, enc, m1=1, m2=1):
         """sets encoder, right_rot, += turn_track, (18 = 1 wheel rot)"""
         print('Moving '+str((enc/18))+' rotation(s) right')
-        enc_tgt(1, 1, enc)
+        enc_tgt(m1, m2, enc)
         right_rot()
         self.turn_track += enc
         time.sleep(1 * (enc / 18)+.4)
 
-    def encL(self, enc):
+    def encL(self, enc, m1=1, m2=1):
         """sets encoder, right_rot, -= turn_track, (18 = 1 wheel rot)"""
         print('Moving '+str((enc/18))+' rotation(s) left')
-        enc_tgt(1, 1, enc)
+        enc_tgt(m1, m2, enc)
         left_rot()
         self.turn_track -= enc
         time.sleep(1*(enc/18)+.4)
 
-    def encB(self, enc):
+    def encB(self, enc, m1=1, m2=1):
         """sets an encoder, moves back, sleeps, (18 = 1 wheel rot)"""
         print('Moving '+str((enc/18))+ ' rotations(s) backwards')
-        enc_tgt(1, 1, enc)
+        enc_tgt(m1, m2, enc)
         bwd()
         time.sleep(1 * (enc / 18)+.4)
 
