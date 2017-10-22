@@ -103,6 +103,14 @@ class Pigo(object):
         """shell command for GoPiGo fwd"""
         fwd()
 
+    def right_rot(self):
+        """encoder free turn"""
+        right_rot()
+
+    def left_rot(self):
+        """encoder-free turn"""
+        left_rot()
+
     def encF(self, enc, m1=1, m2=1):
         """sets encoder, moves forward, sleeps (18 = 1 wheel rot)"""
         print('Moving '+str((enc/18))+' rotation(s) forward')
@@ -274,6 +282,8 @@ class Pigo(object):
         print('My safe stop distance is ' + str(self.SAFE_STOP_DIST) + 'cm')
         print('My hard stop distance is ' + str(self.HARD_STOP_DIST) + 'cm')
 
+def error():
+    pass
 
 def stop_now():
     try:
