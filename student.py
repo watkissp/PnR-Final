@@ -64,7 +64,6 @@ class Piggy(pigo.Pigo):
         self.encF(18)
         self.encR(5)
         self.encL(5)
-        self.encR(5)
         self.encB(5)
         self.encF(5)
         self.wide_scan()
