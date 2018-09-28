@@ -23,7 +23,7 @@ class Piggy(pigo.Pigo):
         self.SAFE_STOP_DIST = 30
         self.HARD_STOP_DIST = 15
         # YOU DECIDE: What left motor power helps straighten your fwd()?
-        self.LEFT_SPEED = 138
+        self.LEFT_SPEED = 136
         # YOU DECIDE: What left motor power helps straighten your fwd()?
         self.RIGHT_SPEED = 145
         # This one isn't capitalized because it changes during runtime, the others don't
@@ -61,13 +61,32 @@ class Piggy(pigo.Pigo):
         """executes a series of methods that add up to a compound dance"""
         print("\n---- LET'S DANCE ----\n")
         ##### WRITE YOUR FIRST PROJECT HERE
-        self.encF(18)
-        self.encR(5)
-        self.encL(5)
-        self.encB(5)
-        self.encF(5)
-        self.wide_scan()
-        self.encB(18)
+        for x in range(3):
+            self.dab_on_them()
+            self.shoot()
+            self.whip()
+            self.nae_nae()
+
+    def dab_on_them(self):
+        for x in range(5):
+            self.encR(5)
+            time.sleep(1)
+
+    def shoot(self):
+        for x in range(2):
+        for x in range(self.MIDPOINT -5, self.MIDPOINT +5, 5)
+            self.servo(x)
+            self.encL(5)
+
+    def whip(self):
+        for x in range(self.MIDPOINT - 30, self.MIDPOINT +30, 30):
+            self.servo(x)
+
+    def nae_nae(self):
+        for x in range(3):
+            self.encL(3)
+            self.encR(3)
+            self.encB(5)
 
     def obstacle_count(self):
         """scans and estimates the number of obstacles within sight"""
