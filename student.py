@@ -70,7 +70,7 @@ class Piggy(pigo.Pigo):
     def dab_on_them(self):
         for x in range(5):
             self.encR(5)
-            time.sleep(1)
+            time.sleep(.1)
 
     def shoot(self):
         for x in range(5):
