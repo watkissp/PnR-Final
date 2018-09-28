@@ -66,17 +66,23 @@ class Piggy(pigo.Pigo):
             self.shoot()
             self.whip()
             self.nae_nae()
+            self.fade()
 
     def dab_on_them(self):
         self.servo(self.MIDPOINT - 30)
         self.encL(10)
-        self.servo(self.MIDPOINT + 30)
+        self.servo(self.MIDPOINT + 60)
         self.encR(10)
+        self.servo(self.MIDPOINT - 30)
 
     def shoot(self):
-        for x in range(5):
-            self.encF(5)
-            self.encB(5)
+        self.servo(self.MIDPOINT - 30)
+        self.encB(10)
+        self.servo(self.MIDPOINT + 60)
+        self.encF(10)
+        self.servo(self.MIDPOINT - 60)
+        self.servo(self.MIDPOINT + 30)
+
 
     def whip(self):
         for y in range(3):
