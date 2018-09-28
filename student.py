@@ -73,7 +73,7 @@ class Piggy(pigo.Pigo):
             time.sleep(1)
 
     def shoot(self):
-        for x in range(5)
+        for x in range(5):
             self.encF(5)
             self.encB(5)
 
