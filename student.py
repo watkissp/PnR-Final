@@ -74,7 +74,7 @@ class Piggy(pigo.Pigo):
 
     def shoot(self):
         for x in range(2):
-        for x in range(self.MIDPOINT -5, self.MIDPOINT +5, 5)
+        for x in range(self.MIDPOINT -5, self.MIDPOINT +5, 5):
             self.servo(x)
             self.encL(5)
 
