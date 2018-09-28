@@ -73,10 +73,8 @@ class Piggy(pigo.Pigo):
             time.sleep(1)
 
     def shoot(self):
-        for x in range(2):
         for x in range(self.MIDPOINT -5, self.MIDPOINT +5, 5):
             self.servo(x)
-            self.encL(5)
 
     def whip(self):
         for x in range(self.MIDPOINT - 30, self.MIDPOINT +30, 30):
