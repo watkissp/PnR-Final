@@ -68,9 +68,10 @@ class Piggy(pigo.Pigo):
             self.nae_nae()
 
     def dab_on_them(self):
-        for x in range(5):
-            self.encR(5)
-            time.sleep(.1)
+        self.servo(self.MIDPOINT - 30)
+        self.encL(10)
+        self.servo(self.MIDPOINT + 30)
+        self.encR(10)
 
     def shoot(self):
         for x in range(5):
@@ -87,6 +88,17 @@ class Piggy(pigo.Pigo):
             self.encL(3)
             self.encR(3)
             self.encB(5)
+
+    def fade(self):
+        self.right_rot()
+        self.servo(self.MIDPOINT - 30)
+        self.sleep(1)
+        self.stop()
+        self.left_rot()
+        self.servo(self.MIDPOINT + 30)
+        self.sleep(1)
+        self.stop()
+
 
     def obstacle_count(self):
         """scans and estimates the number of obstacles within sight"""
