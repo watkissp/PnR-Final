@@ -83,10 +83,9 @@ class Piggy(pigo.Pigo):
         self.servo(self.MIDPOINT - 60)
         self.servo(self.MIDPOINT + 30)
 
-
     def whip(self):
         for y in range(3):
-            for x in range(self.MIDPOINT - 30, self.MIDPOINT +30, 30):
+            for x in range(self.MIDPOINT - 30, self.MIDPOINT + 30, 30):
                 self.servo(x)
 
     def nae_nae(self):
@@ -99,7 +98,6 @@ class Piggy(pigo.Pigo):
         self.right_rot()
         self.servo(self.MIDPOINT - 30)
         self.sleep(1)
-        self.stop()
         self.left_rot()
         self.servo(self.MIDPOINT + 30)
         self.sleep(1)
