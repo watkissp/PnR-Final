@@ -78,8 +78,9 @@ class Piggy(pigo.Pigo):
             self.encB(5)
 
     def whip(self):
-        for x in range(self.MIDPOINT - 30, self.MIDPOINT +30, 30):
-            self.servo(x)
+        for y in range(3):
+            for x in range(self.MIDPOINT - 30, self.MIDPOINT +30, 30):
+                self.servo(x)
 
     def nae_nae(self):
         for x in range(3):
