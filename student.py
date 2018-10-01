@@ -70,20 +70,24 @@ class Piggy(pigo.Pigo):
             self.mo_bamba()
 
     def dab_on_them(self):
-        self.servo(self.MIDPOINT - 30)
-        self.encL(10)
-        self.servo(self.MIDPOINT + 30)
-        self.servo(self.MIDPOINT + 30)
-        self.encR(10)
-        self.servo(self.MIDPOINT - 30)
+        for x in range(2):
+            self.servo(self.MIDPOINT - 30)
+            self.encL(10)
+            self.servo(self.MIDPOINT + 30)
+            self.servo(self.MIDPOINT + 30)
+            self.encR(10)
+            self.servo(self.MIDPOINT - 30)
 
     def shoot(self):
         self.servo(self.MIDPOINT - 30)
-        self.encB(10)
-        self.servo(self.MIDPOINT + 60)
-        self.encF(10)
-        self.servo(self.MIDPOINT - 60)
+        self.encF(1)
+        self.right_rot()
         self.servo(self.MIDPOINT + 30)
+        self.servo(self.MIDPOINT + 30)
+        self.encF(1)
+        self.left_rot()
+        self.servo(self.MIDPOINT - 30)
+        self.servo(self.MIDPOINT - 30)
 
     def whip(self):
         for y in range(3):
