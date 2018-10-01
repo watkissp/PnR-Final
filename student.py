@@ -106,8 +106,7 @@ class Piggy(pigo.Pigo):
         self.stop()
 
     def mo_bamba(self):
-
-
+        pass
 
     def obstacle_count(self):
         """scans and estimates the number of obstacles within sight"""
