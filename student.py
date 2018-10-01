@@ -80,6 +80,7 @@ class Piggy(pigo.Pigo):
             self.servo(self.MIDPOINT - 30)
 
     def shoot(self):
+        for x in range(3)
         self.servo(self.MIDPOINT - 30)
         self.encF(1)
         self.right_rot()
