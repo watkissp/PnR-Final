@@ -97,10 +97,10 @@ class Piggy(pigo.Pigo):
     def fade(self):
         self.right_rot()
         self.servo(self.MIDPOINT - 30)
-        self.sleep(1)
+        time.sleep(1)
         self.left_rot()
         self.servo(self.MIDPOINT + 30)
-        self.sleep(1)
+        time.sleep(1)
         self.stop()
 
 
