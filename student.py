@@ -70,7 +70,8 @@ class Piggy(pigo.Pigo):
             self.mo_bamba()
 
     def dab_on_them(self):
-        for x in range(2):
+        return
+        for x in range(3):
             self.servo(self.MIDPOINT - 30)
             self.encL(10)
             self.servo(self.MIDPOINT + 30)
@@ -90,17 +91,20 @@ class Piggy(pigo.Pigo):
         self.servo(self.MIDPOINT - 30)
 
     def whip(self):
+        return
         for y in range(3):
             for x in range(self.MIDPOINT - 30, self.MIDPOINT + 30, 30):
                 self.servo(x)
 
     def nae_nae(self):
+        return
         for x in range(3):
             self.encL(3)
             self.encR(3)
             self.encB(5)
 
     def fade(self):
+        return
         self.right_rot()
         self.servo(self.MIDPOINT - 30)
         time.sleep(1)
