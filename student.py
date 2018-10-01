@@ -61,17 +61,19 @@ class Piggy(pigo.Pigo):
         """executes a series of methods that add up to a compound dance"""
         print("\n---- LET'S DANCE ----\n")
         ##### WRITE YOUR FIRST PROJECT HERE
-        for x in range(3):
+        for x in range(1):
             self.dab_on_them()
             self.shoot()
             self.whip()
             self.nae_nae()
             self.fade()
+            self.mo_bamba()
 
     def dab_on_them(self):
         self.servo(self.MIDPOINT - 30)
         self.encL(10)
-        self.servo(self.MIDPOINT + 60)
+        self.servo(self.MIDPOINT + 30)
+        self.servo(self.MIDPOINT + 30)
         self.encR(10)
         self.servo(self.MIDPOINT - 30)
 
@@ -102,6 +104,9 @@ class Piggy(pigo.Pigo):
         self.servo(self.MIDPOINT + 30)
         time.sleep(1)
         self.stop()
+
+    def mo_bamba(self):
+
 
 
     def obstacle_count(self):
