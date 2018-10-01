@@ -80,6 +80,7 @@ class Piggy(pigo.Pigo):
             self.servo(self.MIDPOINT - 30)
 
     def shoot(self):
+        return
         for x in range(3):
             self.servo(self.MIDPOINT - 30)
             self.encF(1)
@@ -93,7 +94,7 @@ class Piggy(pigo.Pigo):
 
     def whip(self):
         return
-        for y in range(3):
+        for y in range(5):
             for x in range(self.MIDPOINT - 30, self.MIDPOINT + 30, 30):
                 self.servo(x)
 
@@ -115,7 +116,15 @@ class Piggy(pigo.Pigo):
         self.stop()
 
     def mo_bamba(self):
-        pass
+        for x in range(5):
+            self.encB(2)
+            for y in range(self.MIDPOINT - 30, self.MIDPOINT + 30, 30):
+                self.servo(x)
+            self.encR(2)
+            self.encF(2)
+            for y in range(self.MIDPOINT - 30, self.MIDPOINT + 30, 30):
+                self.servo(x)
+            self.encL(2)
 
     def obstacle_count(self):
         """scans and estimates the number of obstacles within sight"""
