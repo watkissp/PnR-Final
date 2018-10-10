@@ -61,6 +61,8 @@ class Piggy(pigo.Pigo):
         """executes a series of methods that add up to a compound dance"""
         print("\n---- LET'S DANCE ----\n")
         ##### WRITE YOUR FIRST PROJECT HERE
+
+        "list of all dances"
         for x in range(1):
             self.dab_on_them()
             self.shoot()
@@ -69,6 +71,7 @@ class Piggy(pigo.Pigo):
             self.fade()
             self.mo_bamba()
 
+        "Head turns while body moves same direction"
     def dab_on_them(self):
         for x in range(3):
             self.servo(self.MIDPOINT - 30)
@@ -78,6 +81,7 @@ class Piggy(pigo.Pigo):
             self.encR(10)
             self.servo(self.MIDPOINT - 30)
 
+        "Head turns while body moves forward"
     def shoot(self):
         for x in range(3):
             self.servo(self.MIDPOINT - 30)
@@ -90,17 +94,20 @@ class Piggy(pigo.Pigo):
             self.servo(self.MIDPOINT - 30)
             self.servo(self.MIDPOINT - 30)
 
+        "Head turns back and forth"
     def whip(self):
         for y in range(5):
             for x in range(self.MIDPOINT - 30, self.MIDPOINT + 30, 30):
                 self.servo(x)
 
+        "Moves right, left, then back 3 times"
     def nae_nae(self):
         for x in range(3):
             self.encL(3)
             self.encR(3)
             self.encB(5)
 
+        "Head turns while body moves opposite direction"
     def fade(self):
         self.right_rot()
         self.servo(self.MIDPOINT - 30)
@@ -110,6 +117,7 @@ class Piggy(pigo.Pigo):
         time.sleep(1)
         self.stop()
 
+        "Not enough time to make"
     def mo_bamba(self):
         for x in range(5):
             pass
