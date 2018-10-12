@@ -80,7 +80,6 @@ class Piggy(pigo.Pigo):
             self.encR(10)
         return True
 
-
     def dab_on_them(self):
         """"Head turns while body moves same direction"""
         for x in range(3):
