@@ -59,8 +59,10 @@ class Piggy(pigo.Pigo):
     # YOU DECIDE: How does your GoPiggy dance?
     def dance(self):
         """executes a series of methods that add up to a compound dance"""
+        if not self.safe_to_dance():
+            print("\n---- Not Safe To Dance----\n")
+            return
         print("\n---- LET'S DANCE ----\n")
-        ##### WRITE YOUR FIRST PROJECT HERE
 
         for x in range(1):
             self.dab_on_them()
@@ -69,6 +71,14 @@ class Piggy(pigo.Pigo):
             self.nae_nae()
             self.fade()
             self.sprinkler()
+
+    def safe_to_dance(self):
+        """checks for obstacles in way"""
+        for x in range(4):
+            if not self.is_clear():
+                return False
+            self.encR(10)
+        return True
 
 
     def dab_on_them(self):
