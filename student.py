@@ -96,7 +96,7 @@ class Piggy(pigo.Pigo):
 
     def whip(self):
         """"Head turns back and forth"""
-        for y in range(5):
+        for y in range(10):
             for x in range(self.MIDPOINT - 30, self.MIDPOINT + 30, 30):
                 self.servo(x)
 
@@ -117,8 +117,7 @@ class Piggy(pigo.Pigo):
             self.servo(self.MIDPOINT + 30)
             time.sleep(1)
             self.stop()
-
-    def sprinkler(self):
+def sprinkler(self):
             """"moves your head like a sprinkler"""
             # repeat the move 5 times
             for x in range(5):
