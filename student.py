@@ -117,6 +117,8 @@ class Piggy(pigo.Pigo):
             self.servo(self.MIDPOINT + 30)
             time.sleep(1)
             self.stop()
+
+    # FROM MR. ADILETTA
     def sprinkler(self):
             """"moves your head like a sprinkler"""
             # repeat the move 5 times
