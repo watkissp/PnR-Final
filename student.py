@@ -68,7 +68,7 @@ class Piggy(pigo.Pigo):
             self.whip()
             self.nae_nae()
             self.fade()
-            self.mo_bamba()
+            self.sprinkler()
 
 
     def dab_on_them(self):
@@ -118,7 +118,7 @@ class Piggy(pigo.Pigo):
             time.sleep(1)
             self.stop()
 
-        def sprinkler(self):
+    def sprinkler(self):
             """"moves your head like a sprinkler"""
             # repeat the move 5 times
             for x in range(5):
