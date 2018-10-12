@@ -62,7 +62,6 @@ class Piggy(pigo.Pigo):
         print("\n---- LET'S DANCE ----\n")
         ##### WRITE YOUR FIRST PROJECT HERE
 
-        "list of all dances"
         for x in range(1):
             self.dab_on_them()
             self.shoot()
@@ -71,8 +70,9 @@ class Piggy(pigo.Pigo):
             self.fade()
             self.mo_bamba()
 
-        "Head turns while body moves same direction"
+
     def dab_on_them(self):
+        """"Head turns while body moves same direction"""
         for x in range(3):
             self.servo(self.MIDPOINT - 30)
             self.encL(10)
@@ -81,8 +81,8 @@ class Piggy(pigo.Pigo):
             self.encR(10)
             self.servo(self.MIDPOINT - 30)
 
-        "Head turns while body moves forward"
     def shoot(self):
+        """"Head turns while body moves forward"""
         for x in range(3):
             self.servo(self.MIDPOINT - 30)
             self.encF(1)
@@ -94,33 +94,36 @@ class Piggy(pigo.Pigo):
             self.servo(self.MIDPOINT - 30)
             self.servo(self.MIDPOINT - 30)
 
-        "Head turns back and forth"
     def whip(self):
+        """"Head turns back and forth"""
         for y in range(5):
             for x in range(self.MIDPOINT - 30, self.MIDPOINT + 30, 30):
                 self.servo(x)
 
-        "Moves right, left, then back 3 times"
     def nae_nae(self):
+        """"Moves right, left, then back 3 times"""
         for x in range(3):
             self.encL(3)
             self.encR(3)
             self.encB(5)
 
-        "Head turns while body moves opposite direction"
     def fade(self):
-        self.right_rot()
-        self.servo(self.MIDPOINT - 30)
-        time.sleep(1)
-        self.left_rot()
-        self.servo(self.MIDPOINT + 30)
-        time.sleep(1)
-        self.stop()
+        """Head turns while body moves opposite direction"""
+        for x in range(2):
+            self.right_rot()
+            self.servo(self.MIDPOINT - 30)
+            time.sleep(1)
+            self.left_rot()
+            self.servo(self.MIDPOINT + 30)
+            time.sleep(1)
+            self.stop()
 
-        "Not enough time to make"
-    def mo_bamba(self):
-        for x in range(5):
-            pass
+        def sprinkler(self):
+            """"moves your head like a sprinkler"""
+            # repeat the move 5 times
+            for x in range(5):
+                for angle in range(self.MIDPOINT - 20, self.MIDPOINT + 20, 5):
+                    self.servo(angle)
 
     def obstacle_count(self):
         """scans and estimates the number of obstacles within sight"""
