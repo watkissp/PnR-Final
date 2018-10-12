@@ -98,10 +98,10 @@ class Piggy(pigo.Pigo):
         """"Head turns back and forth"""
         for y in range(10):
             for x in range(self.MIDPOINT - 30, self.MIDPOINT + 30, 30):
-                self.servo(x
+                self.servo(x)
 
     def nae_nae(self):
-        """"Moves right, left, then back 3 times"""
+        """Moves right, left, then back 3 times"""
         for x in range(3):
             self.encL(3)
             self.encR(3)
