@@ -61,14 +61,14 @@ class Piggy(pigo.Pigo):
         """reacts to dist measurement in a cute way"""
         while True:
             if self.dist() < 20:
-                self.encB(3)
-                self.encF(3)
-                self.encR(3)
-                self.encL(7)
-                self.encR(3)
-                for x in range(10):
+                for x in range(2):
+                    self.right_rot()
                     self.servo(self.MIDPOINT - 30)
+                    time.sleep(1)
+                    self.left_rot()
                     self.servo(self.MIDPOINT + 30)
+                    time.sleep(1)
+                    self.stop()
             time.sleep(.1)
 
     # YOU DECIDE: How does your GoPiggy dance?
