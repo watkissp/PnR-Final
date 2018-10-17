@@ -65,7 +65,7 @@ class Piggy(pigo.Pigo):
                 time.sleep(1)
                 self.encR(3)
                 time.sleep(1)
-                self.encL(7)
+                self.encL(6.5)
                 time.sleep(1)
                 self.encR(3)
                 time.sleep(1)
