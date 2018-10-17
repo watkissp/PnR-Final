@@ -62,10 +62,15 @@ class Piggy(pigo.Pigo):
         while True:
             if self.dist() < 20:
                 self.encB(3)
-                self.encF(3)
+                time.sleep(2)
                 self.encR(3)
+                time.sleep(2)
                 self.encL(7)
+                time.sleep(2)
                 self.encR(3)
+                time.sleep(2)
+                self.encF(3)
+                time.sleep(2)
                 for x in range(5):
                     self.servo(self.MIDPOINT - 30)
                     self.servo(self.MIDPOINT + 30)
