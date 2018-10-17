@@ -64,7 +64,8 @@ class Piggy(pigo.Pigo):
                 self.encB(3)
                 self.encF(3)
                 self.encR(3)
-                self.encL(3)
+                self.encL(7)
+                self.encR(3)
                 for x in range(10):
                     self.servo(self.MIDPOINT - 30)
                     self.servo(self.MIDPOINT + 30)
