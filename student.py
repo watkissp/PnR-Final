@@ -94,8 +94,6 @@ class Piggy(pigo.Pigo):
             for angle in range(self.right_rot(), self. MIDPOINT):
                 # turn
 
-
-            pass
             # delete this
 
 
