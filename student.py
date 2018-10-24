@@ -89,8 +89,13 @@ class Piggy(pigo.Pigo):
                 self.encF(15)
 
         else:
-            #turns until it's clear
-            pass
+            print("I'll keep turning until it's clear")
+            # turns until it's clear
+            for angle in range(self.right_rot(), self. MIDPOINT):
+                # turn
+
+
+            pass # delete this
 
 
     def open_house(self):
