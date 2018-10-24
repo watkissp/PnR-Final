@@ -94,6 +94,8 @@ class Piggy(pigo.Pigo):
             for angle in range(self.right_rot(), self. MIDPOINT):
                 # turn
 
+        pass
+
 
     def open_house(self):
         """reacts to dist measurement in a cute way"""
