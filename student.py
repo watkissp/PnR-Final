@@ -80,13 +80,13 @@ class Piggy(pigo.Pigo):
             # if right is bigger:
             if right_total > left_total:
                 # turn right
-                self.encR(4)
-                self.encF(10)
+                self.encR(3)
+                self.encF(15)
             # if left is bigger:
             else:
                 # turn left
-                self.encL(4)
-                self.encF(10)
+                self.encL(3)
+                self.encF(15)
 
         else:
             #turns until it's clear
