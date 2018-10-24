@@ -95,7 +95,8 @@ class Piggy(pigo.Pigo):
                 # turn
 
 
-            pass # delete this
+            pass
+            # delete this
 
 
     def open_house(self):
