@@ -91,10 +91,10 @@ class Piggy(pigo.Pigo):
         else:
             print("I'll keep turning until it's clear")
             # turns until it's clear
-            for x in range(self.right_rot(), self.scan):
-                # turn
-                self.encF(15)
-
+            while self.is_clear():
+                return False
+            self.encF(15)
+        return True
 
     def open_house(self):
         """reacts to dist measurement in a cute way"""
