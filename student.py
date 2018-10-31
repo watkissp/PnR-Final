@@ -48,8 +48,7 @@ class Piggy(pigo.Pigo):
                 "s": ("Check status", self.status),
                 "h": ("Open House", self.open_house),
                 "t": ("Test", self.skill_test),
-                "q": ("Quit", quit_now)
-                }
+                "q": ("Quit", quit_now)}
         # loop and print the menu...
         for key in sorted(menu.keys()):
             print(key + ":" + menu[key][0])
@@ -235,7 +234,10 @@ class Piggy(pigo.Pigo):
 
     def cruise(self):
         """ drive straight while path is clear """
-        self.fwd()
+        while not self.is_clear():
+            self.encR(2)
+        while self.is_clear():
+            self.fwd()
         while self.dist() > self.SAFE_STOP_DIST:
             time.sleep(.5)
         self.stop()
