@@ -257,6 +257,7 @@ class Piggy(pigo.Pigo):
             print("Degree: " + str(x) + ", distance: " + str(scan1))
             if scan1 < self.SAFE_STOP_DIST:
                 print("Doesn't look clear to me")
+            self.servo(self.MIDPOINT)
                 return False
         return True
 
