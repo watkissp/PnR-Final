@@ -237,7 +237,7 @@ class Piggy(pigo.Pigo):
             self.encR(2)
         while self.is_clear():
             if self.dist() > self.SAFE_STOP_DIST:
-                self.encF(20)
+                self.fwd()
 ####################################################
 ############### STATIC FUNCTIONS
 
