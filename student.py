@@ -228,8 +228,8 @@ class Piggy(pigo.Pigo):
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         while True:
             self.cruise()
-            else:
-                self.encR(10)
+        else:
+            self.encR(10)
 
     def cruise(self):
         """ drive straight while path is clear """
