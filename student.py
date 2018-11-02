@@ -241,7 +241,7 @@ class Piggy(pigo.Pigo):
 ####################################################
 ############### STATIC FUNCTIONS
     def choose_side(self):
-        self.wide_scan()
+        self.wide_scan(count = 5)
         left_total = 0
         right_total = 0
         # loop from self.MIDPOINT - 60 to self.MIDPOINT
@@ -268,7 +268,7 @@ class Piggy(pigo.Pigo):
     def is_clear(self):
         """does a 3-point scan around the midpoint, returns false if a test fails"""
         print("Running the is_clear method.")
-        for x in range((self.MIDPOINT - 35), (self.MIDPOINT + 35), 5):
+        for x in range((self.MIDPOINT - 40), (self.MIDPOINT + 40), 10):
             self.servo(x)
             scan1 = self.dist()
             # double check the distance
