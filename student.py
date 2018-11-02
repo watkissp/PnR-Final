@@ -236,8 +236,7 @@ class Piggy(pigo.Pigo):
         while not self.is_clear():
             self.encR(2)
         while self.is_clear():
-            self.servo(self.MIDPOINT)
-            if self.dist() > self.SAFE_STOP_DIST:
+            if self.scan[x] > self.SAFE_STOP_DIST:
                 self.fwd()
 ####################################################
 ############### STATIC FUNCTIONS
