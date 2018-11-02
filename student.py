@@ -241,6 +241,7 @@ class Piggy(pigo.Pigo):
 ####################################################
 ############### STATIC FUNCTIONS
     def choose_side(self):
+        self.wide_scan()
         left_total = 0
         right_total = 0
         # loop from self.MIDPOINT - 60 to self.MIDPOINT
