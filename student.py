@@ -228,7 +228,7 @@ class Piggy(pigo.Pigo):
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         while True:
             while not self.is_clear():
-                self.encR(3)
+                self.choose_side()
             self.cruise()
 
     def cruise(self):
@@ -240,6 +240,28 @@ class Piggy(pigo.Pigo):
 
 ####################################################
 ############### STATIC FUNCTIONS
+    def choose_side(self):
+        left_total = 0
+        right_total = 0
+        # loop from self.MIDPOINT - 60 to self.MIDPOINT
+        for angle in range(self.MIDPOINT - 60, self.MIDPOINT):
+            if self.scan[angle]:
+                # add up the numbers to right_total
+                right_total += self.scan[angle]
+        # loop from self.MIDPOINT to self.MIDPOINT + 60
+        for angle in range(self.MIDPOINT, self.MIDPOINT + 60):
+            if self.scan[angle]:
+                # add up the numbers to left_total
+                left_total += self.scan[angle]
+        # if right is bigger:
+        if right_total > left_total:
+            # turn right
+            self.encR(3)
+        # if left is bigger:
+        else:
+            # turn left
+            self.encL(3)
+
     def is_clear(self):
         """does a 3-point scan around the midpoint, returns false if a test fails"""
         print("Running the is_clear method.")
