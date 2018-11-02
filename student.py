@@ -227,17 +227,17 @@ class Piggy(pigo.Pigo):
         print("-------- [ Press CTRL + C to stop me ] --------\n")
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         while True:
+            while not self.is_clear():
+                self.encR(3)
             self.cruise()
-        else:
-            print("I took the L on this one")
 
     def cruise(self):
         """ drive straight while path is clear """
-        while not self.is_clear():
-            self.encR(2)
+        self.fwd()
         while self.is_clear():
-            if self.scan[x] > self.SAFE_STOP_DIST:
-                self.fwd()
+            pass
+        self.stop()
+
 ####################################################
 ############### STATIC FUNCTIONS
     def is_clear(self):
