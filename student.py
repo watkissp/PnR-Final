@@ -253,15 +253,18 @@ class Piggy(pigo.Pigo):
             if self.scan[angle]:
                 # add up the numbers to left_total
                 left_total += self.scan[angle]
+        # if right and left are close
         if abs(right_total - left_total) < 75:
+            #turn right
             self.encR(4)
+            pass
         # if right is bigger:
         if right_total > left_total:
             # turn right
             self.encR(4)
             pass
         # if left is bigger:
-        else:
+        if left_total > right_total:
             # turn left
             self.encL(4)
             pass
