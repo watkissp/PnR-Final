@@ -254,16 +254,16 @@ class Piggy(pigo.Pigo):
                 # add up the numbers to left_total
                 left_total += self.scan[angle]
         if abs(right_total - left_total) < 100:
-            self.encR(5)
+            self.encR(4)
         # if right is bigger:
         if right_total > left_total:
             # turn right
-            self.encR(6)
+            self.encR(4)
             pass
         # if left is bigger:
         else:
             # turn left
-            self.encL(6)
+            self.encL(4)
             pass
 
     def is_clear(self):
