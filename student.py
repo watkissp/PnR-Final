@@ -257,8 +257,7 @@ class Piggy(pigo.Pigo):
         # if right and left are close
         if abs(right_total - left_total) < 75:
             #go back
-            self.right_rot()
-            while self.is_clear():
+            self.encB(7)
                 pass
             print("\nDon't see a clear, solid option.\n")
             return
