@@ -258,7 +258,7 @@ class Piggy(pigo.Pigo):
         if abs(right_total - left_total) < 75:
             #go back
             self.encB(7)
-                pass
+            pass
             print("\nDon't see a clear, solid option.\n")
             return
         # if right is bigger:
