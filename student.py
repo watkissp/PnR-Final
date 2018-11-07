@@ -226,21 +226,22 @@ class Piggy(pigo.Pigo):
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         print("-------- [ Press CTRL + C to stop me ] --------\n")
         print("-----------! NAVIGATION ACTIVATED !------------\n")
-        while True:
-            while not self.is_clear():
-                self.choose_side()
-            self.cruise()
+
+        while True: #always
+            while not self.is_clear(): #when path is not clear
+                self.choose_side()  #choose whatever side looks more clear
+            self.cruise()  #go forward and scan until it isn't clear
 
     def cruise(self):
         """ drive straight while path is clear """
-        self.fwd()
-        while self.is_clear():
+        self.fwd() #drive
+        while self.is_clear(): #scans for objects in way
             pass
 
 ####################################################
 ############### STATIC FUNCTIONS
     def choose_side(self):
-        self.wide_scan(count=10)
+        self.wide_scan(count=10) #count every 10 degrees
         left_total = 0
         right_total = 0
         # loop from self.MIDPOINT - 60 to self.MIDPOINT
@@ -255,8 +256,8 @@ class Piggy(pigo.Pigo):
                 left_total += self.scan[angle]
         # if right and left are close
         if abs(right_total - left_total) < 75:
-            #turn right
-            self.encR(4)
+            #go back
+            self.encB(4)
             print("\nDon't see a clear, solid option.\n")
             return
         # if right is bigger:
@@ -274,6 +275,7 @@ class Piggy(pigo.Pigo):
         """does a 3-point scan around the midpoint, returns false if a test fails"""
         print("Running the is_clear method.")
         for x in range((self.MIDPOINT - 30), (self.MIDPOINT + 30), 15):
+            #scans from midpoint to -30 to midpoint to 30 in incraments of 15
             self.servo(x)
             scan1 = self.dist()
             # double check the distance
