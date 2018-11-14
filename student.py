@@ -228,7 +228,7 @@ class Piggy(pigo.Pigo):
         print("-----------! NAVIGATION ACTIVATED !------------\n")
 
         while True: #always
-            while not self.is_clear(): #when path is not clear
+            if not self.is_clear(): #when path is not clear
                 self.choose_side()  #choose whatever side looks more clear
             self.cruise()  #go forward and scan until it isn't clear
 
@@ -278,7 +278,7 @@ class Piggy(pigo.Pigo):
         """does a 3-point scan around the midpoint, returns false if a test fails"""
         print("Running the is_clear method.")
         for x in range((self.MIDPOINT - 50), (self.MIDPOINT + 50), 50):
-            #scans from midpoint to -30 to midpoint to 30 in incraments of 15
+            #scans from midpoint to -50 to midpoint to 50 in incraments of 50
             self.servo(x)
             scan1 = self.dist()
             # double check the distance
