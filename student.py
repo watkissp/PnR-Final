@@ -228,16 +228,17 @@ class Piggy(pigo.Pigo):
         print("-----------! NAVIGATION ACTIVATED !------------\n")
 
         while True: #always
+            if self.is_clear(): #when path is clear
+                self.cruise() #use cruise method
             if not self.is_clear(): #when path is not clear
                 self.choose_side()  #choose whatever side looks more clear
-            self.cruise()  #go forward and scan until it isn't clear
 
     def cruise(self):
         """ drive straight while path is clear """
         self.fwd() #drive
-        while self.dist() > self.SAFE_STOP_DIST:#scans for objects in way
+        while self.is_clear():#scans for objects in way
             time.sleep(0.1)
-        self.stop() #stops robot
+            pass
 
 ####################################################
 ############### STATIC FUNCTIONS
