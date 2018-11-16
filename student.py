@@ -230,13 +230,13 @@ class Piggy(pigo.Pigo):
         while True: #always
             if self.is_clear(): #when path is clear
                 self.cruise() #use cruise method
-            if not self.is_clear(): #when path is not clear
+            else: #when path is not clear
                 self.choose_side()  #choose whatever side looks more clear
 
     def cruise(self):
         """ drive straight while path is clear """
         self.fwd() #drive
-        while self.is_clear():#scans for objects in way
+        while self.dist() > self.SAFE_STOP_DIST: #scans for objects in way
             time.sleep(0.3)
         self.stop() #stops robot
 
