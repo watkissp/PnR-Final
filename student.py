@@ -25,7 +25,7 @@ class Piggy(pigo.Pigo):
         # YOU DECIDE: What left motor power helps straighten your fwd()?
         self.LEFT_SPEED = 155
         # YOU DECIDE: What left motor power helps straighten your fwd()?
-        self.RIGHT_SPEED = 190
+        self.RIGHT_SPEED = 175
         # This one isn't capitalized because it changes during runtime, the others don't
         self.turn_track = 0
         # Our scan list! The index will be the degree and it will store distance
@@ -237,7 +237,7 @@ class Piggy(pigo.Pigo):
         self.fwd() #drive
         while self.is_clear(): #scans for objects in way
             pass
-        self.stop()
+        self.stop() #stops robot
 
 ####################################################
 ############### STATIC FUNCTIONS
