@@ -237,7 +237,8 @@ class Piggy(pigo.Pigo):
         """ drive straight while path is clear """
         self.fwd() #drive
         while self.is_clear():#scans for objects in way
-            time.sleep(0.1)
+            time.sleep(0.3)
+        self.stop() #stops robot
 
 ####################################################
 ############### STATIC FUNCTIONS
