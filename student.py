@@ -20,8 +20,8 @@ class Piggy(pigo.Pigo):
         # Our servo turns the sensor. What angle of the servo( ) method sets it straight?
         self.MIDPOINT = 77
         # YOU DECIDE: How close can an object get (cm) before we have to stop?
-        self.SAFE_STOP_DIST = 35
-        self.HARD_STOP_DIST = 20
+        self.SAFE_STOP_DIST = 25
+        self.HARD_STOP_DIST = 15
         # YOU DECIDE: What left motor power helps straighten your fwd()?
         self.LEFT_SPEED = 115
         # YOU DECIDE: What left motor power helps straighten your fwd()?
@@ -238,7 +238,7 @@ class Piggy(pigo.Pigo):
         self.fwd() #drive
         while self.is_clear(): #scans for objects in way
             time.sleep(0.3)
-        self.stop() #stops robot
+        self.stop() #stops robotstu
 
 ####################################################
 ############### STATIC FUNCTIONS
