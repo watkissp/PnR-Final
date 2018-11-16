@@ -238,7 +238,6 @@ class Piggy(pigo.Pigo):
         self.fwd() #drive
         while self.is_clear():#scans for objects in way
             time.sleep(0.1)
-            pass
 
 ####################################################
 ############### STATIC FUNCTIONS
