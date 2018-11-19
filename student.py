@@ -235,7 +235,7 @@ class Piggy(pigo.Pigo):
 
     def cruise(self):
         """ drive straight while path is clear """
-        self.fwd() #drive
+        self.encF(5) #drive forward in small incraments
         while self.is_clear(): #scans for objects in way
             time.sleep(0.3)
         self.stop() #stops robot
