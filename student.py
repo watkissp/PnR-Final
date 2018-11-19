@@ -235,10 +235,10 @@ class Piggy(pigo.Pigo):
 
     def cruise(self):
         """ drive straight while path is clear """
-        self.encF(5) #drive forward in small incraments
-        while self.is_clear(): #scans for objects in way
-            time.sleep(0.3)
-        self.stop() #stops robot
+        if self.dist() <= 20:
+            self.choose_side()
+        else:
+            self.encF(10)
 
 ####################################################
 ############### STATIC FUNCTIONS
