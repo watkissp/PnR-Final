@@ -235,10 +235,10 @@ class Piggy(pigo.Pigo):
 
     def cruise(self):
         """ drive straight while path is clear """
-        if self.dist() <= 20:
-            self.choose_side()
-        else:
-            self.encF(10)
+        if self.dist() <= 20:  #if the distance is less than 20 cm
+            self.choose_side()  #checks which side is safer
+        else: #if distance is greater than 20 cm
+            self.encF(10)  #pulses forward
 
 ####################################################
 ############### STATIC FUNCTIONS
