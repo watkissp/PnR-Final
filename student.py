@@ -25,7 +25,7 @@ class Piggy(pigo.Pigo):
         # YOU DECIDE: What left motor power helps straighten your fwd()?
         self.LEFT_SPEED = 110
         # YOU DECIDE: What left motor power helps straighten your fwd()?
-        self.RIGHT_SPEED = 155
+        self.RIGHT_SPEED = 150
         # This one isn't capitalized because it changes during runtime, the others don't
         self.turn_track = 0
         # Our scan list! The index will be the degree and it will store distance
@@ -278,7 +278,7 @@ class Piggy(pigo.Pigo):
     def is_clear(self):
         """does a 3-point scan around the midpoint, returns false if a test fails"""
         print("Running the is_clear method.")
-        for x in range((self.MIDPOINT - 40), (self.MIDPOINT + 40 + 1), 40):
+        for x in range((self.MIDPOINT - 45), (self.MIDPOINT + 45 + 1), 45):
             #scans from midpoint to -50 to midpoint to 50 in incraments of 50
             self.servo(x)
             scan1 = self.dist()
