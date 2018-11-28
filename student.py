@@ -260,7 +260,7 @@ class Piggy(pigo.Pigo):
         if abs(right_total - left_total) < 75:
             #go back
             self.encB(10)
-            self.encL(5)
+            self.encL(7)
             pass
             print("\nDon't see a clear, solid option.\n")
             return
@@ -278,7 +278,7 @@ class Piggy(pigo.Pigo):
     def is_clear(self):
         """does a 3-point scan around the midpoint, returns false if a test fails"""
         print("Running the is_clear method.")
-        for x in range((self.MIDPOINT - 45), (self.MIDPOINT + 45 + 1), 45):
+        for x in range((self.MIDPOINT - 46), (self.MIDPOINT + 46 + 1), 23):
             #scans from midpoint to -50 to midpoint to 50 in incraments of 50
             self.servo(x)
             scan1 = self.dist()
