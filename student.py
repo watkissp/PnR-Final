@@ -227,10 +227,15 @@ class Piggy(pigo.Pigo):
         print("-------- [ Press CTRL + C to stop me ] --------\n")
         print("-----------! NAVIGATION ACTIVATED !------------\n")
 
+        error_count = 0
         while True: #always
             if self.is_clear(): #when path is clear
-                self.cruise() #use cruise method
+                self.cruise()  #use cruise method
+                error_count = 0
             else: #when path is not clear
+                error_count += 1
+                if error_count == 10:
+                    raw_input("Hey, what's up?")
                 self.choose_side()  #choose whatever side looks more clear
 
     def cruise(self):
