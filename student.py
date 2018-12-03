@@ -240,9 +240,9 @@ class Piggy(pigo.Pigo):
 
     def cruise(self):
         """ drive straight while path is clear """
-        if self.dist() <= 15:  #if the distance is less than 20 cm
+        if self.dist() <= 12:  #if the distance is less than 12 cm
             self.choose_side()  #checks which side is safer
-        else: #if distance is greater than 20 cm
+        else: #if distance is greater than 12 cm
             self.encF(10)  #pulses forward
 
 ####################################################
@@ -283,7 +283,7 @@ class Piggy(pigo.Pigo):
     def is_clear(self):
         """does a 3-point scan around the midpoint, returns false if a test fails"""
         print("Running the is_clear method.")
-        for x in range((self.MIDPOINT - 46), (self.MIDPOINT + 46 + 1), 23):
+        for x in range((self.MIDPOINT - 36), (self.MIDPOINT + 36 + 1), 18):
             #scans from midpoint to -50 to midpoint to 50 in incraments of 50
             self.servo(x)
             scan1 = self.dist()
