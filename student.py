@@ -259,12 +259,12 @@ class Piggy(pigo.Pigo):
         left_total = 0
         right_total = 0
         # loop from self.MIDPOINT - 60 to self.MIDPOINT
-        for angle in range(self.MIDPOINT - 60, self.MIDPOINT):
+        for angle in range(self.MIDPOINT - 70, self.MIDPOINT):
             if self.scan[angle]:
                 # add up the numbers to right_total
                 right_total += self.scan[angle]
         # loop from self.MIDPOINT to self.MIDPOINT + 60
-        for angle in range(self.MIDPOINT, self.MIDPOINT + 60):
+        for angle in range(self.MIDPOINT, self.MIDPOINT + 70):
             if self.scan[angle]:
                 # add up the numbers to left_total
                 left_total += self.scan[angle]
@@ -290,7 +290,7 @@ class Piggy(pigo.Pigo):
     def is_clear(self):
         """does a 3-point scan around the midpoint, returns false if a test fails"""
         print("Running the is_clear method.")
-        for x in range((self.MIDPOINT - 36), (self.MIDPOINT + 36 + 1), 18):
+        for x in range((self.MIDPOINT - 30), (self.MIDPOINT + 30 + 1), 15):
             #scans from midpoint to -50 to midpoint to 50 in incraments of 50
             self.servo(x)
             scan1 = self.dist()
