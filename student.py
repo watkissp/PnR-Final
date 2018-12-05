@@ -234,7 +234,7 @@ class Piggy(pigo.Pigo):
                 error_count = 0
             else: #when path is not clear
                 error_count += 1
-                if error_count == 10:
+                if error_count == 5:
                     raw_input("Hey, what's up?")
                 self.choose_side()  #choose whatever side looks more clear
 
