@@ -25,7 +25,7 @@ class Piggy(pigo.Pigo):
         # YOU DECIDE: What left motor power helps straighten your fwd()?
         self.LEFT_SPEED = 110
         # YOU DECIDE: What left motor power helps straighten your fwd()?
-        self.RIGHT_SPEED = 139
+        self.RIGHT_SPEED = 142
         # This one isn't capitalized because it changes during runtime, the others don't
         self.turn_track = 0
         # Our scan list! The index will be the degree and it will store distance
@@ -234,8 +234,8 @@ class Piggy(pigo.Pigo):
                 error_count = 0
             else: #when path is not clear
                 error_count += 1
-                if error_count == 5:
-                    raw_input("Hey, what's up?")
+                if error_count >= 5:
+                    self.find_hole()
                 self.choose_side()  #choose whatever side looks more clear
 
     def cruise(self):
@@ -247,6 +247,13 @@ class Piggy(pigo.Pigo):
 
 ####################################################
 ############### STATIC FUNCTIONS
+    def find_hole(self):
+        while not self.is_clear():
+            self.encR(2)
+        else:
+            self.encF(10)
+
+
     def choose_side(self):
         self.wide_scan(count=10) #count every 10 degrees
         left_total = 0
