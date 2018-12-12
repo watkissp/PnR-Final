@@ -233,9 +233,9 @@ class Piggy(pigo.Pigo):
                 self.cruise()  #use cruise method
                 error_count = 0
             else: #when path is not clear
-                error_count += 1
-                if error_count >= 5:
-                    self.find_hole()
+                error_count += 1  #add one to error count
+                if error_count >= 4:  #if the error count gets to 4
+                    self.find_hole()  #turn until it finds a hole
                 self.choose_side()  #choose whatever side looks more clear
 
     def cruise(self):
@@ -248,10 +248,10 @@ class Piggy(pigo.Pigo):
 ####################################################
 ############### STATIC FUNCTIONS
     def find_hole(self):
-        while not self.is_clear():
-            self.encR(2)
-        else:
-            self.encF(10)
+        while not self.is_clear(): #when it isn't clear
+            self.encR(2)  #turn right small amount
+        else: #if it is clear
+            self.encF(10) #go forward
 
 
     def choose_side(self):
