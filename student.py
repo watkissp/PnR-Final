@@ -248,6 +248,7 @@ class Piggy(pigo.Pigo):
 ####################################################
 ############### STATIC FUNCTIONS
     def find_hole(self):
+        self.servo(self.MIDPOINT)
         while self.dist() <= 40: #when it isn't clear
             self.encR(2)  #turn right small amount
             time.sleep(.5)
