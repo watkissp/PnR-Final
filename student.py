@@ -229,13 +229,13 @@ class Piggy(pigo.Pigo):
 
         error_count = 0
         while True: #always
+            if error_count >= 3:  # if the error count gets to 3
+                self.find_hole()  # turn until it finds a hole
             if self.is_clear(): #when path is clear
                 self.cruise()  #use cruise method
                 error_count = 0
             else: #when path is not clear
                 error_count += 1  #add one to error count
-                if error_count >= 3:  #if the error count gets to 4
-                    self.find_hole()  #turn until it finds a hole
                 self.choose_side()  #choose whatever side looks more clear
 
     def cruise(self):
@@ -248,10 +248,9 @@ class Piggy(pigo.Pigo):
 ####################################################
 ############### STATIC FUNCTIONS
     def find_hole(self):
-        if self.dist() <= 25: #when it isn't clear
+        while self.dist() <= 25: #when it isn't clear
             self.encR(2)  #turn right small amount
-        else: #if it is clear
-            self.encF(10) #go forward
+
 
 
     def choose_side(self):
@@ -291,7 +290,7 @@ class Piggy(pigo.Pigo):
         """does a 3-point scan around the midpoint, returns false if a test fails"""
         print("Running the is_clear method.")
         for x in range((self.MIDPOINT - 36), (self.MIDPOINT + 36 + 1), 18):
-            #scans from midpoint to -50 to midpoint to 50 in incraments of 50
+            #scans from midpoint to -36 to midpoint to 36 in incraments of 18
             self.servo(x)
             scan1 = self.dist()
             # double check the distance
