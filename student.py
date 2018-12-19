@@ -252,6 +252,8 @@ class Piggy(pigo.Pigo):
         while self.dist() <= 40: #when it isn't clear
             self.encR(2)  #turn right small amount
             time.sleep(.5)
+        while self.is_clear():
+            self.encF(12)
 
 
 
